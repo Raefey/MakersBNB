@@ -7,11 +7,10 @@ function Breaker() {
 }
 
 Breaker.prototype.book = function(listing) {
-if (listing[2] == false) { throw "Listing not available" }
-else (listing[2] == true) { this._submittedRequest = true }
-
-
-
-  this._submittedRequest = true;
-
+  if (listing[2] === false) {
+    throw "Listing not available"
+  }
+  else {
+    this._submittedRequest = true
+  };
 }

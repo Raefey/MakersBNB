@@ -11,12 +11,12 @@ var listingBooked
 
   describe("#book", function() {
     it("allows user to request to book a listing", function() {
-      breaker.book(listing[0])
+      breaker.book(listing)
       expect(breaker._submittedRequest).toBe(true);
     });
 
     it("only allows user to book available listings", function() {
-      expect(breaker.book(listingBooked[0])).toThrow("Listing not available");
+      expect(function(){breaker.book(listingBooked)}).toThrow("Listing not available");
     });
   });
 

@@ -16,4 +16,3 @@ describe('Feature test:', function(){
 
   })
 })
-// {'id': 123, 'userName': 'Cindy', 'email': 'cindy@gmail.com', 'description': 'nice room', 'price': '£100'} 

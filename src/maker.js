@@ -5,6 +5,5 @@ function Maker(){
 }
 
 Maker.prototype.add = function(roomInfo){
-  console.log(roomInfo)
   this._list.push(roomInfo)
 }
