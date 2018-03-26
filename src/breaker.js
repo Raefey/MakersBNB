@@ -1,10 +1,3 @@
-var pg = require(‘pg’);
-var connectionString = "postgres://userName:password@serverName/ip:port/nameOfDatabase";
-var pgClient = new pg.Client(connectionString);
-pgClient.connect();
-var query = pgClient.query("SELECT id from Customer where name = 'customername'");
-
-
 function Breaker() {
   this._submittedRequest = false;
   this._name = "";
@@ -13,7 +6,12 @@ function Breaker() {
   this._password = "";
 }
 
-Breaker.prototype.book = function(listing_id) {
+Breaker.prototype.book = function(listing) {
+if (listing[2] == false) { throw "Listing not available" }
+else (listing[2] == true) { this._submittedRequest = true }
+
+
 
   this._submittedRequest = true;
+
 }
