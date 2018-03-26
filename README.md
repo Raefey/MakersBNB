@@ -1,6 +1,6 @@
 # MakersBNB
 
-##MVP User Stories
+## MVP User Stories
 
 ```
 As a Maker,
@@ -48,7 +48,7 @@ So that I can protect my account information
 I want to be able to log out
 ```
 
-##Tech Stack
+## Tech Stack
 
 html/css
 javascript
