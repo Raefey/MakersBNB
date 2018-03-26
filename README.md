@@ -52,5 +52,4 @@ I want to be able to log out
 
 html/css
 javascript
-ruby
 psql
