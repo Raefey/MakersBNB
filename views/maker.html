@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="src/breaker.js"></script>
+    <script src="src/maker.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="src/interface.js"></script>
+  </head>
+
+  <body>
+    <section>
+        <form>
+          <label for='listing-title'>Listing Title: </label>
+          <br>
+          <input id='listing-title' name='listing-title' type='text'></input>
+          <br><br>
+          <label for='listing-price'>Listing Price: </label>
+          <br>
+          <input id='listing-price' name='listing-price' type='text'></input>
+          <br><br>
+          <label for='listing-description'>Listing Description: </label>
+          <br>
+          <textarea id='listing-description' name='listing-description' type='text' rows="20" cols="100"></textarea>
+
+          <br>
+          <button class='button' type='submit' id="add-a-listing">Add listing</button>
+         </form>
+      <h1><span id='Title'></span></h1>
+      <h1><span id='Price'></span></h1>
+      <h1><span id='Description'></span></h1>
+    </section>
+
+  </body>
+</html>
