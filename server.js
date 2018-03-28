@@ -8,9 +8,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('src'))
 app.set('view engine', 'ejs')
 
-MongoClient.connect('mongodb://localhost:27017', function(err, database){
+MongoClient.connect('mongodb://julesnuggy:password@ds227199.mlab.com:27199/test_database', function(err, database){
   if(err) return console.log(err)
-  db = database.db('room_listing')
+  db = database.db('test_database')
 })
 
 app.listen(3000, function() {
@@ -23,15 +23,15 @@ app.get('/', function (req, res) {
 
 app.get('/maker', function (req, res) {
   db.collection('listing').find().toArray(function(err, result) {
-  if (err) return console.log(err)
-  res.render('maker.ejs', {listings: result})
+  if (err) { return console.log(err) };
+  res.render('maker.ejs', {listings: result});
   })
 })
 
 app.post('/maker', function (req, res) {
   db.collection('listing').save(req.body, function(err, result) {
     if (err) return console.log(err)
-    console.log('postmaker' + req.body)
+    console.log('Maker Post: ' + result)
     res.redirect ('/maker')
   })
 })
@@ -46,7 +46,7 @@ app.get('/breaker', function (req, res) {
 app.post('/breaker', function (req, res) {
   db.collection('booking').save(req.body, function(err, result) {
     if (err) return console.log(err)
-    console.log(req.body)
+    console.log('Breaker Post: ' + result)
     res.redirect ('/confirmation')
   })
 })

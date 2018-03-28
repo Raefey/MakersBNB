@@ -9,15 +9,6 @@
 
   <body>
     <section>
-      <ul>
-        <% for(var i=0; i<listings.length; i++) {%>
-          <li>
-            <span><%= listings[i]['listing-title'] %></span>
-            <span><%= listings[i]['listing-price'] %></span>
-            <span><%= listings[i]['listing-description'] %></span>
-          </li>
-        <% } %>
-      </ul>
 
         <form action="/maker" method="POST">
 
@@ -36,6 +27,17 @@
           <br>
           <input type="submit" value="Maker"></input>
          </form>
+
+         <ul>
+           <% for(var i=0; i<listings.length; i++) {%>
+             <li>
+               <span><%= listings[i]['listing-title'] %></span>
+               <span><%= listings[i]['listing-price'] %></span>
+               <span><%= listings[i]['listing-description'] %></span>
+             </li>
+           <% } %>
+         </ul>
+         
       <h1><span id='Title'></span></h1>
       <h1><span id='Price'></span></h1>
       <h1><span id='Description'></span></h1>
