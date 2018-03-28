@@ -1,0 +1,32 @@
+{
+  "name": "datebase-connection-setup",
+  "version": "1.0.0",
+  "description": "testing setup",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raefey/MakersBNB.git"
+  },
+  "author": "cindy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Raefey/MakersBNB/issues"
+  },
+  "homepage": "https://github.com/Raefey/MakersBNB#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}
