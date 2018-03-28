@@ -18,16 +18,35 @@ app.listen(3000, function() {
 })
 
 app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/views/index.html')
+})
+
+app.get('/maker', function (req, res) {
   db.collection('listing').find().toArray(function(err, result) {
-    if (err) return console.log(err)
-    res.render('index.ejs', {listings: result})
+  if (err) return console.log(err)
+  res.render('maker.ejs', {listings: result})
   })
 })
 
-app.post('/listings', function (req, res) {
+app.post('/maker', function (req, res) {
   db.collection('listing').save(req.body, function(err, result) {
     if (err) return console.log(err)
     console.log(req.body)
-    res.redirect ('/')
+    res.redirect ('/maker')
+  })
+})
+
+app.get('/breaker', function (req, res) {
+  db.collection('booking').find().toArray(function(err, result) {
+    if (err) return console.log(err)
+    res.render('breaker.ejs', {booking: result})
+  })
+})
+
+app.post('/breaker', function (req, res) {
+  db.collection('booking').save(req.body, function(err, result) {
+    if (err) return console.log(err)
+    console.log(req.body)
+    res.redirect ('/breaker')
   })
 })

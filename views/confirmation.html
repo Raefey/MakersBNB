@@ -1,0 +1,11 @@
+<h1>Rental form submitted!</h1>
+<ul>
+  <% for(var i=0; i<listings.length; i++) {%>
+    <li>
+      <span><%= listings[i].['breaker-name'] %></span>
+      <span><%= listings[i].['breaker-email'] %></span>
+      <span><%= listings[i].['breaker-message'] %></span>
+      <span><%= listings[i]['breaker-dates'] %></span>
+    </li>
+  <% } %>
+</ul>

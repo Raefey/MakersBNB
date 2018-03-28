@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="src/breaker.js"></script>
+    <script src="src/maker.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="src/interface.js"></script>
+  </head>
+
+  <body>
+    <section>
+      <ul>
+        <% for(var i=0; i<listings.length; i++) {%>
+          <li>
+            <span><%= listings[i]['listing-title'] %></span>
+            <span><%= listings[i]['listing-price'] %></span>
+            <span><%= listings[i]['listing-description'] %></span>
+          </li>
+        <% } %>
+      </ul>
+
+        <form action="/maker" method="POST">
+
+          <label for='listing-title'>Listing Title: </label>
+          <br>
+          <input id='listing-title' name='listing-title' type='text'></input>
+          <br><br>
+          <label for='listing-price'>Listing Price: </label>
+          <br>
+          <input id='listing-price' name='listing-price' type='text'></input>
+          <br><br>
+          <label for='listing-description'>Listing Description: </label>
+          <br>
+          <textarea id='listing-description' name='listing-description' type='text' rows="20" cols="100"></textarea>
+
+          <br>
+          <input type="submit" value="Maker"></input>
+         </form>
+      <h1><span id='Title'></span></h1>
+      <h1><span id='Price'></span></h1>
+      <h1><span id='Description'></span></h1>
+    </section>
+
+  </body>
+</html>
