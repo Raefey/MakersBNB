@@ -1,22 +1,12 @@
 <html>
   <head>
-    <script src="src/breaker.js"></script>
-    <script src="src/maker.js"></script>
+    <script src="breaker.js"></script>
+    <script src="maker.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="src/interface.js"></script>
+    <script src="interface.js"></script>
   </head>
 
   <body>
-    <ul>
-      <% for(var i=0; i<booking.length; i++) {%>
-        <li>
-          <span><%= booking[i]['breaker-name'] %></span>
-          <span><%= booking[i]['breaker-email'] %></span>
-          <span><%= booking[i]['breaker-message'] %></span>
-          <span><%= booking[i]['breaker-dates'] %></span>
-        </li>
-      <% } %>
-    </ul>
 
     <div id="advert">
       <h1>Raefe's Crib</h1>
@@ -28,22 +18,22 @@
       <form action="/breaker" method="post">
         <label>Name</label>
         <br/>
-        <input type="text" id="breaker-name"></input>
+        <input type="text" name="breaker-name" id="breaker-name"></input>
         <br/><br/>
 
         <label>Email</label>
         <br/>
-        <input type="text" id="breaker-email"></input>
+        <input type="text" name="breaker-email" id="breaker-email"></input>
         <br/><br/>
 
         <label>Message</label>
         <br/>
-        <textarea type="text" id="breaker-message" rows="20" cols="50"></textarea>
+        <textarea type="text" name="breaker-message" id="breaker-message" rows="20" cols="50"></textarea>
         <br/><br/>
 
         <label>Dates</label>
         <br/>
-        <input type="text" id="breaker-dates"></input>
+        <input type="text" name="breaker-dates" id="breaker-dates"></input>
         <br/><br/>
 
         <input type=submit value="RENT!">

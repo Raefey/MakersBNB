@@ -1,0 +1,11 @@
+<h1>Rental form submitted!</h1>
+<ul>
+  <% for(var i=0; i<booking.length; i++) {%>
+    <li>
+      <span><%= booking[i]['breaker-name'] %></span>
+      <span><%= booking[i]['breaker-email'] %></span>
+      <span><%= booking[i]['breaker-message'] %></span>
+      <span><%= booking[i]['breaker-dates'] %></span>
+    </li>
+  <% } %>
+</ul>

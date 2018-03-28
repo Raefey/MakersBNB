@@ -31,7 +31,7 @@ app.get('/maker', function (req, res) {
 app.post('/maker', function (req, res) {
   db.collection('listing').save(req.body, function(err, result) {
     if (err) return console.log(err)
-    console.log(req.body)
+    console.log('postmaker' + req.body)
     res.redirect ('/maker')
   })
 })
@@ -47,6 +47,13 @@ app.post('/breaker', function (req, res) {
   db.collection('booking').save(req.body, function(err, result) {
     if (err) return console.log(err)
     console.log(req.body)
-    res.redirect ('/breaker')
+    res.redirect ('/confirmation')
+  })
+})
+
+app.get('/confirmation', function (req, res) {
+  db.collection('booking').find().toArray(function(err, result) {
+    if (err) return console.log(err)
+    res.render('confirmation.ejs', {booking: result})
   })
 })
