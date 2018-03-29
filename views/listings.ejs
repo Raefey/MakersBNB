@@ -1,0 +1,13 @@
+<table>
+  <% for(var i=0; i<listings.length; i++) {%>
+    <tr>
+      <td><%= listings[i]['listing-title'] %></td>
+      <td><%= listings[i]['listing-price'] %></td>
+      <td><%= listings[i]['listing-description'] %></td>
+    </tr>
+  <% } %>
+</table>
+
+<form action="/breaker">
+  <input type="submit" value="Message Owner" class="button"></input>
+</form>
