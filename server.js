@@ -8,9 +8,13 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs')
 
-MongoClient.connect('mongodb://julesnuggy:password@ds227199.mlab.com:27199/test_database', function(err, database){
+MongoClient.connect('mongodb://Noelle:makers@ds227469.mlab.com:27469/makersbnb', function(err, database){
   if(err) return console.log(err)
-  db = database.db('test_database')
+  db = database.db('makersbnb')
+
+  app.listen(3000, function() {
+    console.log('listening on 3000')
+  })
 })
 
 
@@ -54,8 +58,4 @@ app.post('/booking-request', function (req, res) {
     console.log('Breaker Post: ' + result)
     res.redirect ('/booking-request')
   })
-})
-
-app.listen(3000, function() {
-  console.log('listening on 3000')
 })
