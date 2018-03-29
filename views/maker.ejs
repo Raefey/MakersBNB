@@ -1,44 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="breaker.js"></script>
-    <script src="maker.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="interface.js"></script>
+    <meta charset="utf-8">
+    <title>MOBbnb</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krona+One|Lobster|Quicksand|Nunito|Dosis">
   </head>
 
   <body>
     <section>
-      <ul>
-        <% for(var i=0; i<listings.length; i++) {%>
-          <li>
-            <span><%= listings[i]['listing-title'] %></span>
-            <span><%= listings[i]['listing-price'] %></span>
-            <span><%= listings[i]['listing-description'] %></span>
-          </li>
-        <% } %>
-      </ul>
 
-        <form action="/maker" method="POST">
+        <form action="/listings" method="POST">
 
           <label for='listing-title'>Listing Title: </label>
           <br>
-          <input id='listing-title' name='listing-title' type='text'></input>
+          <input id='listing-title' name='listing-title' type='text' class='rounded'></input>
           <br><br>
           <label for='listing-price'>Listing Price: </label>
           <br>
-          <input id='listing-price' name='listing-price' type='text'></input>
+          <input id='listing-price' name='listing-price' type='text' class='rounded'></input>
           <br><br>
           <label for='listing-description'>Listing Description: </label>
           <br>
-          <textarea id='listing-description' name='listing-description' type='text' rows="20" cols="100"></textarea>
+          <textarea id='listing-description' name='listing-description' type='text' rows="20" cols="100" class='rounded'></textarea>
 
           <br>
-          <input type="submit" value="Maker"></input>
+          <input type="submit" value="Add Listing" class="button"></input>
          </form>
-      <h1><span id='Title'></span></h1>
-      <h1><span id='Price'></span></h1>
-      <h1><span id='Description'></span></h1>
+
     </section>
 
   </body>

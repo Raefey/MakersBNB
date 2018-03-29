@@ -1,0 +1,60 @@
+body {
+  background-color: #eeeeee;
+}
+
+h1 {
+  font-family: 'Lobster', sans-serif;
+  font-size: 100px;
+  color: #930000;
+}
+
+h2 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 50px;
+  color: #5d5d5d;
+}
+
+h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 50px;
+  color: #723854;
+}
+
+label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #edbd0d;
+}
+
+.rounded {
+  border: solid 1px #5d5d5d;
+  border-radius: 3px;
+}
+
+.center_div {
+  display: inline-block;
+  margin: auto;
+  width: 100%;
+  text-align: center !important;
+}
+
+.button {
+  width: 150px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  font-size: 20px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.button:hover {
+  width: 150px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  font-size: 20px;
+  font-family: 'Dosis', sans-serif;
+  background-color: #edbd0d;
+}
