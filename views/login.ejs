@@ -1,14 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>MOBbnb</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krona+One|Lobster|Quicksand|Nunito|Dosis">
-
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-
   </head>
 
   <body>
@@ -40,29 +36,23 @@
 
     <div class="invis_banner"></div>
 
+
     <div id="main_div" class="form_div">
       <div class="v_container">
 
         <div class="sub_box left_text">
-          <h2 class="yellow center">Request to Book Property</h2>
+          <h2 class="yellow center">Log in to MOBbnb!</h2>
         </div>
 
-        <form action="/booking-request" method="post">
-          <label>Name</label>
-          <input type="text" name="breaker-name" id="breaker-name" class="form_input"></input>
-
-          <label>Email</label>
-          <input type="text" name="breaker-email" id="breaker-email" class="form_input"></input>
-
-          <label>Message</label>
-          <textarea type="text" name="breaker-message" id="breaker-message" rows="10" cols="80" class="form_input"></textarea>
-
-          <label>Check-in Date</label>
-          <input type="text" name="breaker-date-from" id="breaker-date-from" class="form_input datepicker"></input>
-
-          <label>Check-out Date</label>
-          <input type="text" name="breaker-date-to" id="breaker-date-to" class="form_input datepicker"></input>
-
+        <form action="/login/submit" method="post">
+          <div class="sub_box left_text">
+            <label for="username">Username</label>
+            <input type="text" name="signup_username" class="form_input" maxlength="20">
+          </div>
+          <div class="sub_box left_text">
+            <label for="password">Password</label>
+            <input type="password" name="signup_password" class="form_input" maxlength="30">
+          </div>
           <div class="sub_box">
             <div class="h_container">
               <input type="submit" id="cancel_reg" value="Cancel" class="ok_can_button can" formnovalidate>
@@ -73,11 +63,7 @@
 
       </div>
     </div>
+
+
   </body>
 </html>
-
-<script>
-$(document).ready(function() {
-  $(".datepicker").datepicker();
-});
-</script>

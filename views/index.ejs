@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MOBbnb</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krona+One|Lobster|Quicksand|Nunito|Dosis">
+  </head>
+
+  <div class="fixed_banner">
+    <div class="fixed_banner span_banner">
+      <a class="home" href="/">Makers or Breakers bnb</a>
+    </div>
+
+    <form action='/maker' class="sticky_left">
+      <input type='submit' class="button" value="New Listing">
+    </form>
+
+    <% if (user_login === false) { %>
+      <form action='/signup' class="sticky">
+        <input type='submit' class="button" value="Sign Up">
+      </form>
+
+      <form action='/login' class="sticky">
+        <input type='submit' class="button" value="Log In">
+      </form>
+    <% } %>
+    <% if (user_login === true) { %>
+      <form action='/logout' method="post" class="sticky">
+        <input type='submit' class="button" value="Log Out">
+      </form>
+    <% } %>
+  </div>
+
+  <div class="invis_banner"></div>
+
+  <div id="main_div" class="form_div index_div">
+    <div class="v_container">
+
+      <div class="sub_box left_text">
+        <h2 class="yellow center">Find a home to break!</h2>
+      </div>
+
+      <% for(var i=0; i<listings.length; i++) { %>
+
+        <div class="sub_box listing_div">
+
+          <a href="/breaker">
+            <div class="listing_pic" style="border: solid 1px; height: 100px">
+              pics
+            </div>
+          </a>
+
+          <div class="listing_detail" style="border: solid 1px; height: 100px">
+            <h4><%= listings[i]['listing-title'] %></h4>
+            <p>
+              <%= listings[i]['listing-description'].slice(0, 265); %>
+            </p>
+          </div>
+          <div class="listing_bottom">
+            <div class="listing_inner stars" style="border: solid 1px; height: 100px">
+              <p class="small">
+                <%= '&#9733'.repeat(listings[i]['listing-rating']).concat('&#9734'.repeat(5 - listings[i]['listing-rating'])); %>
+              </p>
+            </div>
+            <div class="listing_inner price" style="border: solid 1px; height: 100px">
+              <p class="small">£<%= parseFloat(listings[i]['listing-price']).toFixed(2) %></p>
+            </div>
+          </div>
+        </div>
+      <% } %>
+
+
+    </div>
+  </div>
+
+    </div>
+  </body>
+</html>
