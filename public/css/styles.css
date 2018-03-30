@@ -1,11 +1,27 @@
+html {
+    overflow-y: scroll;
+}
+
 body {
   background-color: #eeeeee;
 }
 
+a.home, a.active a.hover {
+  font-family: 'Lobster', sans-serif;
+  font-size: 40px;
+  text-decoration: none;
+  color: #930000;
+}
+
 h1 {
   font-family: 'Lobster', sans-serif;
-  font-size: 100px;
+  font-size: 80px;
   color: #930000;
+}
+
+h1.medium {
+  font-size: 60px;
+  text-align: center;
 }
 
 h2 {
@@ -14,10 +30,41 @@ h2 {
   color: #5d5d5d;
 }
 
+h2.medium {
+  font-family: 'Dosis', sans-serif;
+  font-size: 40px;
+  margin-top: 0px;
+}
+
+h2.yellow {
+  font-size: 40px;
+  color: #edbd0d;
+  margin-top: 0px;
+}
+
 h3 {
   font-family: 'Nunito', sans-serif;
   font-size: 50px;
   color: #723854;
+}
+
+h4 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  margin: 0px;
+  color: #edbd0d;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  color: #c4c4c4;
+}
+
+p.small {
+  margin: 0px;
+  vertical-align: middle;
+
 }
 
 label {
@@ -26,11 +73,70 @@ label {
   color: #edbd0d;
 }
 
-.rounded {
-  border: solid 1px #5d5d5d;
-  border-radius: 3px;
+/* Forms and buttons */
+.button {
+  width: 100px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px 20px 10px 0px;
+  font-size: 15px;
+  font-family: 'Dosis', sans-serif;
 }
 
+.button:hover {
+  background-color: #edbd0d;
+}
+
+input.ok_can_button {
+  width: 50%;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input.ok {
+  background-color: #274744;
+  margin: 8px 0px 0px 8px !important;
+}
+
+input.ok:hover {
+  background-color: #4bb091;
+}
+
+input.can {
+  background-color: #601313;
+  margin: 8px 8px 0px 0px !important;
+}
+
+input.can:hover {
+  background-color: #ba2424;
+}
+
+.signup_input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+}
+
+.sticky {
+  position: sticky !important;
+  top: 10px;
+  float: right;
+}
+
+/* DIVs */
 .center_div {
   display: inline-block;
   margin: auto;
@@ -38,23 +144,134 @@ label {
   text-align: center !important;
 }
 
-.button {
-  width: 150px;
-  height: 60px;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 10px 0px;
-  font-size: 20px;
-  font-family: 'Dosis', sans-serif;
+.fixed_banner {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+  padding: 0px;
+  border: solid 1px none;
+  background-color: #eeeeee;
+  text-align: center;
 }
 
-.button:hover {
-  width: 150px;
+.span_banner {
+  position: fixed;
+  text-align: center;
+  background-color: transparent !important;
+  vertical-align: center;
+}
+
+.invis_banner {
   height: 60px;
-  padding: 10px;
+  top: 0px;
+  right: 0px;
+}
+
+.form_div {
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 30px;
+  width: 670px;
   border-radius: 5px;
-  margin: 10px 0px;
-  font-size: 20px;
-  font-family: 'Dosis', sans-serif;
-  background-color: #edbd0d;
+}
+
+.index_div {
+  width: 800px;
+  height: 100% !important;
+  border: solid 1px
+}
+
+.signup_div {
+  height: 100% !important;
+  background-color: #50132d;
+
+}
+
+.login_div {
+  height: 100% !important;
+  background-color: #50132d;
+
+}
+
+.listing_div {
+  margin: 10px -5px 10px -5px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  background-color: #930000;
+  height: 200px;
+  text-align: left !important;
+}
+
+.listing_pic {
+  float: left;
+  height: 90% !important;
+  width: 30%;
+  margin: 10px;
+  border: solid 1px;
+}
+
+.listing_detail {
+  float: right;
+  width: 60%;
+  height: 60% !important;
+  margin: 10px;
+  padding: 10px;
+  border: solid 1px;
+  overflow: hidden;
+}
+
+.listing_bottom {
+  float: right;
+  width: 62.5%;
+  height: 30px  !important;
+  margin: 0px 10px 10px 10px;
+  border: solid 1px;
+}
+
+.listing_inner {
+  width: 40%;
+  height: 10px  !important;
+  padding: 10px;
+  border: none !important;
+  overflow: hidden;
+}
+.price {
+ float: right;
+ text-align: right;
+}
+
+.stars {
+  float: left;
+  text-align: left;
+}
+
+.h_container{
+  display: flex;
+}
+
+.v_container{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.main_box {
+  width: 100%;
+  height: 80%;
+}
+
+.sub_box {
+  width:100%;
+  flex-grow: 1;
+  text-align: right;
+}
+
+/* Display & Alignment */
+.center {
+  text-align: center;
+}
+
+.left_text {
+  text-align: left;
 }

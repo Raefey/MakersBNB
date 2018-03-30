@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MOBbnb</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krona+One|Lobster|Quicksand|Nunito|Dosis">
+  </head>
+
+  <body>
+
+    <div class="fixed_banner">
+      <div class="fixed_banner span_banner">
+        <a class="home" href="/">Makers or Breakers bnb</a>
+      </div>
+      <% if (user_login === false) { %>
+        <form action='/signup' class="sticky">
+          <input type='submit' class="button" value="Sign Up">
+        </form>
+
+        <form action='/login' class="sticky">
+          <input type='submit' class="button" value="Log In">
+        </form>
+      <% } %>
+      <% if (user_login === true) { %>
+        <form action='/logout' method="post" class="sticky">
+          <input type='submit' class="button" value="Log Out">
+        </form>
+      <% } %>
+    </div>
+
+    <div class="invis_banner"></div>
+
+
+    <div id="main_div" class="form_div signup_div">
+      <div class="v_container">
+
+        <div class="sub_box left_text">
+          <h2 class="yellow center">Sign up to MOBbnb!</h2>
+        </div>
+
+        <form action="/phoenix/register/submit" method="post">
+          <div class="sub_box left_text">
+            <label for="username">Username</label>
+            <input type="text" name="signup_username" class="signup_input" maxlength="20">
+          </div>
+          <div class="sub_box left_text">
+            <label for="email">Email</label>
+            <input type="text" name="signup_email" class="signup_input">
+          </div>
+          <div class="sub_box left_text">
+            <label for="password">Password</label>
+            <input type="password" name="signup_password" class="signup_input" maxlength="30">
+          </div>
+          <div class="sub_box left_text">
+            <label for="pw_confirm">Reconfirm Password</label>
+            <input type="password" name="signup_pw_confirm" class="signup_input" maxlength="30">
+          </div>
+          <div class="sub_box">
+            <div class="h_container">
+              <input type="submit" id="cancel_reg" value="Cancel" class="ok_can_button can" formnovalidate>
+              <input type="submit" id="submit_reg" value="Submit" class="ok_can_button ok">
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+  </body>
+</html>

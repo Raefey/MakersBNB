@@ -4,10 +4,28 @@
     <title>MOBbnb</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krona+One|Lobster|Quicksand|Nunito|Dosis">
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
   </head>
 
   <body>
 
+    <div class="fixed_banner">
+
+      <form action='/sign-up' class="sticky">
+        <input type='submit' class="button" value="Sign Up">
+      </form>
+
+      <form action='/log-in' class="sticky">
+        <input type='submit' class="button" value="Log In">
+      </form>
+      <span class="span_banner">Makers or Breakers bnb</span>
+    </div>
+
+    <div class="invis_banner"></div>
 
     <div id="breaker-rent-form">
       <form action="/booking-request" method="post">
@@ -28,11 +46,11 @@
 
         <label>Date From:</label>
         <br/>
-        <input type="text" name="breaker-date-from" id="breaker-date-from" class='rounded'></input>
+        <input type="text" name="breaker-date-from" id="breaker-date-from" class='rounded datepicker'></input>
         <br/>
         <label>Date To:</label>
         <br/>
-        <input type="text" name="breaker-date-to" id="breaker-date-to" class='rounded'></input>
+        <input type="text" name="breaker-date-to" id="breaker-date-to" class='rounded datepicker'></input>
         <br><br/>
 
         <input type=submit value="RENT!" class='submit'>
@@ -40,3 +58,9 @@
     </div>
   </body>
 </html>
+
+<script>
+$(document).ready(function() {
+  $(".datepicker").datepicker();
+});
+</script>

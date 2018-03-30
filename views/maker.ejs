@@ -5,6 +5,10 @@
     <title>MOBbnb</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krona+One|Lobster|Quicksand|Nunito|Dosis">
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   </head>
 
   <body>
@@ -26,11 +30,11 @@
           <br><br>
           <label for='listing-available-from'>Available From: </label>
           <br>
-          <input id='listing-available-from' name='listing-available-from' type='text' class='rounded'></input>
+          <input id='listing-available-from' name='listing-available-from' type='text' class='rounded datepicker'></input>
           <br><br>
           <label for='listing-available-to'>Available To: </label>
           <br>
-          <input id='listing-available-to' name='listing-available-to' type='text' class='rounded'></input>
+          <input id='listing-available-to' name='listing-available-to' type='text' class='rounded datepicker'></input>
 
           <br>
           <input type="submit" value="Add Listing" class="button"></input>
@@ -40,3 +44,9 @@
 
   </body>
 </html>
+
+<script>
+$(document).ready(function() {
+  $(".datepicker").datepicker();
+});
+</script>
