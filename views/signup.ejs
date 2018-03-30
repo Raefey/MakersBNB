@@ -13,6 +13,15 @@
       <div class="fixed_banner span_banner">
         <a class="home" href="/">Makers or Breakers bnb</a>
       </div>
+      
+      <form action='/maker' class="sticky_left">
+        <input type='submit' class="button" value="Maker">
+      </form>
+
+      <form action='/breaker' class="sticky_left">
+        <input type='submit' class="button" value="Breaker">
+      </form>
+
       <% if (user_login === false) { %>
         <form action='/signup' class="sticky">
           <input type='submit' class="button" value="Sign Up">
@@ -32,29 +41,29 @@
     <div class="invis_banner"></div>
 
 
-    <div id="main_div" class="form_div signup_div">
+    <div id="main_div" class="form_div">
       <div class="v_container">
 
         <div class="sub_box left_text">
           <h2 class="yellow center">Sign up to MOBbnb!</h2>
         </div>
 
-        <form action="/phoenix/register/submit" method="post">
+        <form action="/signup/submit" method="post">
           <div class="sub_box left_text">
             <label for="username">Username</label>
-            <input type="text" name="signup_username" class="signup_input" maxlength="20">
+            <input type="text" name="signup_username" class="form_input" maxlength="20">
           </div>
           <div class="sub_box left_text">
             <label for="email">Email</label>
-            <input type="text" name="signup_email" class="signup_input">
+            <input type="text" name="signup_email" class="form_input">
           </div>
           <div class="sub_box left_text">
             <label for="password">Password</label>
-            <input type="password" name="signup_password" class="signup_input" maxlength="30">
+            <input type="password" name="signup_password" class="form_input" maxlength="30">
           </div>
           <div class="sub_box left_text">
             <label for="pw_confirm">Reconfirm Password</label>
-            <input type="password" name="signup_pw_confirm" class="signup_input" maxlength="30">
+            <input type="password" name="signup_pw_confirm" class="form_input" maxlength="30">
           </div>
           <div class="sub_box">
             <div class="h_container">

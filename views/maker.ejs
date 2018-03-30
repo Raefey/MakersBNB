@@ -12,35 +12,73 @@
   </head>
 
   <body>
-    <section>
+
+    <div class="fixed_banner">
+      <div class="fixed_banner span_banner">
+        <a class="home" href="/">Makers or Breakers bnb</a>
+      </div>
+
+      <form action='/maker' class="sticky_left">
+        <input type='submit' class="button" value="Maker">
+      </form>
+
+      <form action='/breaker' class="sticky_left">
+        <input type='submit' class="button" value="Breaker">
+      </form>
+
+      <% if (user_login === false) { %>
+        <form action='/signup' class="sticky">
+          <input type='submit' class="button" value="Sign Up">
+        </form>
+
+        <form action='/login' class="sticky">
+          <input type='submit' class="button" value="Log In">
+        </form>
+      <% } %>
+      <% if (user_login === true) { %>
+        <form action='/logout' method="post" class="sticky">
+          <input type='submit' class="button" value="Log Out">
+        </form>
+      <% } %>
+    </div>
+
+    <div class="invis_banner"></div>
+
+    <div id="main_div" class="form_div">
+      <div class="v_container">
+
+        <div class="sub_box left_text">
+          <h2 class="yellow center">Make New Listing</h2>
+        </div>
 
         <form action="/listings" method="POST">
 
-          <label for='listing-title'>Listing Title: </label>
-          <br>
-          <input id='listing-title' name='listing-title' type='text' class='rounded'></input>
-          <br><br>
-          <label for='listing-price'>Listing Price: </label>
-          <br>
-          <input id='listing-price' name='listing-price' type='text' class='rounded'></input>
-          <br><br>
-          <label for='listing-description'>Listing Description: </label>
-          <br>
-          <textarea id='listing-description' name='listing-description' type='text' rows="20" cols="100" class='rounded'></textarea>
-          <br><br>
-          <label for='listing-available-from'>Available From: </label>
-          <br>
-          <input id='listing-available-from' name='listing-available-from' type='text' class='rounded datepicker'></input>
-          <br><br>
-          <label for='listing-available-to'>Available To: </label>
-          <br>
-          <input id='listing-available-to' name='listing-available-to' type='text' class='rounded datepicker'></input>
+          <label for='listing-title'>Listing Title</label>
+          <input id='listing-title' name='listing-title' type='text' class="form_input"></input>
+          
+          <label for='listing-price'>Listing Price</label>
+          <input id='listing-price' name='listing-price' type='text' class="form_input"></input>
 
-          <br>
-          <input type="submit" value="Add Listing" class="button"></input>
-         </form>
+          <label for='listing-description'>Listing Description</label>
+          <textarea id='listing-description' name='listing-description' type='text' rows="10" cols="80" class="form_input"></textarea>
 
-    </section>
+          <label for='listing-available-from'>Available From</label>
+          <input id='listing-available-from' name='listing-available-from' type='text' class="form_input datepicker"></input>
+
+          <label for='listing-available-to'>Available To</label>
+          <input id='listing-available-to' name='listing-available-to' type='text' class="form_input datepicker"></input>
+
+          <div class="sub_box">
+            <div class="h_container">
+              <input type="submit" id="cancel_reg" value="Cancel" class="ok_can_button can" formnovalidate>
+              <input type="submit" id="submit_reg" value="Submit" class="ok_can_button ok">
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
 
   </body>
 </html>

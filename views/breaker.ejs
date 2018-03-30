@@ -14,47 +14,68 @@
   <body>
 
     <div class="fixed_banner">
+      <div class="fixed_banner span_banner">
+        <a class="home" href="/">Makers or Breakers bnb</a>
+      </div>
 
-      <form action='/sign-up' class="sticky">
-        <input type='submit' class="button" value="Sign Up">
+      <form action='/maker' class="sticky_left">
+        <input type='submit' class="button" value="Maker">
       </form>
 
-      <form action='/log-in' class="sticky">
-        <input type='submit' class="button" value="Log In">
+      <form action='/breaker' class="sticky_left">
+        <input type='submit' class="button" value="Breaker">
       </form>
-      <span class="span_banner">Makers or Breakers bnb</span>
+
+      <% if (user_login === false) { %>
+        <form action='/signup' class="sticky">
+          <input type='submit' class="button" value="Sign Up">
+        </form>
+
+        <form action='/login' class="sticky">
+          <input type='submit' class="button" value="Log In">
+        </form>
+      <% } %>
+      <% if (user_login === true) { %>
+        <form action='/logout' method="post" class="sticky">
+          <input type='submit' class="button" value="Log Out">
+        </form>
+      <% } %>
     </div>
 
     <div class="invis_banner"></div>
 
-    <div id="breaker-rent-form">
-      <form action="/booking-request" method="post">
-        <label>Name</label>
-        <br/>
-        <input type="text" name="breaker-name" id="breaker-name" class='rounded'></input>
-        <br/><br/>
+    <div id="main_div" class="form_div">
+      <div class="v_container">
 
-        <label>Email</label>
-        <br/>
-        <input type="text" name="breaker-email" id="breaker-email" class='rounded'></input>
-        <br/><br/>
+        <div class="sub_box left_text">
+          <h2 class="yellow center">Request to Book Property</h2>
+        </div>
 
-        <label>Message</label>
-        <br/>
-        <textarea type="text" name="breaker-message" id="breaker-message" rows="20" cols="50" class='rounded'></textarea>
-        <br/><br/>
+        <form action="/booking-request" method="post">
+          <label>Name</label>
+          <input type="text" name="breaker-name" id="breaker-name" class="form_input"></input>
 
-        <label>Date From:</label>
-        <br/>
-        <input type="text" name="breaker-date-from" id="breaker-date-from" class='rounded datepicker'></input>
-        <br/>
-        <label>Date To:</label>
-        <br/>
-        <input type="text" name="breaker-date-to" id="breaker-date-to" class='rounded datepicker'></input>
-        <br><br/>
+          <label>Email</label>
+          <input type="text" name="breaker-email" id="breaker-email" class="form_input"></input>
 
-        <input type=submit value="RENT!" class='submit'>
-      </form>
+          <label>Message</label>
+          <textarea type="text" name="breaker-message" id="breaker-message" rows="10" cols="80" class="form_input"></textarea>
+
+          <label>Check-in Date</label>
+          <input type="text" name="breaker-date-from" id="breaker-date-from" class="form_input datepicker"></input>
+
+          <label>Check-out Date</label>
+          <input type="text" name="breaker-date-to" id="breaker-date-to" class="form_input datepicker"></input>
+
+          <div class="sub_box">
+            <div class="h_container">
+              <input type="submit" id="cancel_reg" value="Cancel" class="ok_can_button can" formnovalidate>
+              <input type="submit" id="submit_reg" value="Submit" class="ok_can_button ok">
+            </div>
+          </div>
+        </form>
+        
+      </div>
     </div>
   </body>
 </html>

@@ -11,6 +11,15 @@
     <div class="fixed_banner span_banner">
       <a class="home" href="/">Makers or Breakers bnb</a>
     </div>
+
+    <form action='/maker' class="sticky_left">
+      <input type='submit' class="button" value="Maker">
+    </form>
+
+    <form action='/breaker' class="sticky_left">
+      <input type='submit' class="button" value="Breaker">
+    </form>
+
     <% if (user_login === false) { %>
       <form action='/signup' class="sticky">
         <input type='submit' class="button" value="Sign Up">
@@ -46,14 +55,18 @@
           </a>
           <div class="listing_detail" style="border: solid 1px; height: 100px">
             <h4><%= listings[i]['listing-title'] %></h4>
-            <p><%= listings[i]['listing-description'] %></p>
+            <p>
+              <%= listings[i]['listing-description'].slice(0, 265); %>
+            </p>
           </div>
           <div class="listing_bottom">
             <div class="listing_inner stars" style="border: solid 1px; height: 100px">
-              <p class="small"><!--<%= listings[i]['listing-rating'] %>--></p>
+              <p class="small">
+                <%= '&#9733'.repeat(listings[i]['listing-rating']).concat('&#9734'.repeat(5 - listings[i]['listing-rating'])); %>
+              </p>
             </div>
             <div class="listing_inner price" style="border: solid 1px; height: 100px">
-              <p class="small"><%= listings[i]['listing-price'] %></p>
+              <p class="small">£<%= parseFloat(listings[i]['listing-price']).toFixed(2) %></p>
             </div>
           </div>
         </div>
