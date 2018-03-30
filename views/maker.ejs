@@ -19,11 +19,7 @@
       </div>
 
       <form action='/maker' class="sticky_left">
-        <input type='submit' class="button" value="Maker">
-      </form>
-
-      <form action='/breaker' class="sticky_left">
-        <input type='submit' class="button" value="Breaker">
+        <input type='submit' class="button" value="New Listing">
       </form>
 
       <% if (user_login === false) { %>
@@ -55,7 +51,7 @@
 
           <label for='listing-title'>Listing Title</label>
           <input id='listing-title' name='listing-title' type='text' class="form_input"></input>
-          
+
           <label for='listing-price'>Listing Price</label>
           <input id='listing-price' name='listing-price' type='text' class="form_input"></input>
 

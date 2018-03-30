@@ -32,7 +32,6 @@ app.get('/', function (req, res) {
   db.collection('listing').find().toArray(function(err, result) {
   if (err) { return console.log(err) };
   user_login = req.session['user_login'] || false;
-  console.log(user_login)
   res.render('index.ejs', {listings: result, user_login: user_login});
   })
 })

@@ -13,11 +13,7 @@
     </div>
 
     <form action='/maker' class="sticky_left">
-      <input type='submit' class="button" value="Maker">
-    </form>
-
-    <form action='/breaker' class="sticky_left">
-      <input type='submit' class="button" value="Breaker">
+      <input type='submit' class="button" value="New Listing">
     </form>
 
     <% if (user_login === false) { %>
@@ -48,11 +44,13 @@
       <% for(var i=0; i<listings.length; i++) { %>
 
         <div class="sub_box listing_div">
-          <a href="/<%= listings[i]['listing-title'] %>">
+
+          <a href="/breaker">
             <div class="listing_pic" style="border: solid 1px; height: 100px">
               pics
             </div>
           </a>
+
           <div class="listing_detail" style="border: solid 1px; height: 100px">
             <h4><%= listings[i]['listing-title'] %></h4>
             <p>
